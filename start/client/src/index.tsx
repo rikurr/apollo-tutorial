@@ -17,6 +17,9 @@ const link = new HttpLink({
 const client = new ApolloClient({
   cache,
   link,
+  headers: {
+    authorization: localStorage.getItem("token") || "",
+  },
 });
 
 ReactDOM.render(
